@@ -55,8 +55,11 @@ msg = ["qr:"+ qr_data];
 
 
 function sendText(text) {
+    // sendMessages(text);
+// }
 
-
+// LINEトーク画面上でメッセージ送信
+// function sendMessages(text) {
     liff.sendMessages([{
         'type': 'text',
         'text': text
@@ -67,6 +70,7 @@ function sendText(text) {
         window.alert('Failed to send message ' + error);
     });
 }
+
 
 
 
