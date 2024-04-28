@@ -37,8 +37,10 @@ function openQRCodeReader1() {
 let msg = {};
 msg = ["qr:"+ qr_data];
 
-   sendText(String(msg)); //
-
+ 
+    setTimeout(function() {
+         sendText(String(msg)); //
+    }, 1000); // 1秒待機
 
             } else {
                 console.error('No QR code is detected');
