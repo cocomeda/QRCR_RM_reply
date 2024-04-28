@@ -36,8 +36,8 @@ function openQRCodeReader1() {
 
 let msg ={};
 msg = ["qr:"+ qr_data];
-
-                sendText(String(msg)); // Google Apps ScriptにQRコードデータを送信する
+sendAfterDelay(String(msg))
+                //sendText(String(msg)); // Google Apps ScriptにQRコードデータを送信する
 
 
             } else {
@@ -71,7 +71,12 @@ function sendText(text) {
     });
 }
 
-
+function sendAfterDelay(msg) {
+    // メッセージ送信前に数秒待機する（ここでは3秒に設定）
+    setTimeout(function() {
+        sendText(msg);
+    }, 3000); // 3000ミリ秒 = 3秒
+}
 
 
 
